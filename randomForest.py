@@ -26,3 +26,4 @@ tree_max_depth.fit(x,y)
 
 print(f'Decision tree has {tree_max_depth.tree_.node_count} nodes with maximum depth {tree_max_depth.tree_.max_depth}.')
 print(f'Model Accuracy: {tree_max_depth.score(x, y)}')
+

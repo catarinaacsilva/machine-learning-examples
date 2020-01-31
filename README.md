@@ -3,7 +3,6 @@
 
 ## Requirements
 
-## Installation
 
 ## Authors
 
