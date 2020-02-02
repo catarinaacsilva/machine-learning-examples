@@ -1,5 +1,6 @@
 # Machine Learning - Algorithms
 
+- Random Forest
 
 ## Requirements
 
