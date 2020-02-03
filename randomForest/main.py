@@ -13,10 +13,10 @@ def maximunDepth(rseed, max_depth, x, y):
     print(f'Decision tree has {tree.tree_.node_count} nodes with maximum depth {tree.tree_.max_depth}.')
     print(f'Model Accuracy: {tree.score(x, y)}')
 
-def with_dataset(path):
-    data = pd.read_cvs(path).sample(100000, random_state = RSEED)
-    df.head()
-
+def with_dataset(path, rseed, type):
+    data = pd.read_csv(path).sample(10, random_state = rseed)
+    data = data.select_dtypes(type)
+    #Label distribution ??
 
 def main():
     #set random seed to ensure reproductible runs
@@ -24,8 +24,8 @@ def main():
     x = np.array([[2, 2], [2, 1], [2, 3], [1, 2], [1, 1], [3, 3]])
     y = np.array([0, 1, 1, 1, 0, 1])
     max_depth = 2
-
     no_maximumDepth(rseed, x, y)
     maximunDepth(rseed, max_depth, x, y)
+    with_dataset('dataset.csv', rseed, 'number')
 
 main()
