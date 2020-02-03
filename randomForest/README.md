@@ -13,6 +13,9 @@ When this split was done wrong and it produces bad results: Create a 3º class. 
 - Through the gini impurity
 
 
+# Notes:
+
+1. pandas.read_csv
 
 ## Requirements
 
