@@ -17,13 +17,14 @@ When this split was done wrong and it produces bad results: Create a 3º class. 
 
 - python 3
 
-- Install requirements.txt - `pip install -r requirements.txt`
 
 ## Installation
 
-1. Create a venv
+1. Create a venv: `python3 -m venv venv`
 
-2. Install requirements.txt
+2. `source venv/bin/activate`
+
+2. Install requirements.txt - `pip install -r requirements.txt`
 
 3. Run: `python3 main.py`
 
