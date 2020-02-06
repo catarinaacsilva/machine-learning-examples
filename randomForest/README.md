@@ -13,13 +13,19 @@ When this split was done wrong and it produces bad results: Create a 3º class. 
 - Through the gini impurity
 
 
-# Notes:
-
-1. pandas.read_csv
-
 ## Requirements
 
+- python 3
+
+- Install requirements.txt - `pip install -r requirements.txt`
+
 ## Installation
+
+1. Create a venv
+
+2. Install requirements.txt
+
+3. Run: `python3 main.py`
 
 ## Authors
 
