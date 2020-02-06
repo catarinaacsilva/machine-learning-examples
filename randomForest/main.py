@@ -16,7 +16,8 @@ def maximunDepth(rseed, max_depth, x, y):
     print(f'Decision tree has {tree.tree_.node_count} nodes with maximum depth {tree.tree_.max_depth}.')
     print(f'Model Accuracy: {tree.score(x, y)}')
 
-def with_dataset(path):
+#TODO: verificar se rseed = n_estimators
+def with_dataset(path, rseed):
     #Assign column names to the dataset
     headernames = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'Class']
     #read dataset to pandas dataframe
@@ -28,7 +29,7 @@ def with_dataset(path):
     # divide the data into train and test split: split the dataset into 70% training data and 30% of testing data −
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30)
     # train the model
-    classifier = RandomForestClassifier(n_estimators = 50)
+    classifier = RandomForestClassifier(n_estimators = rseed)
     classifier.fit(X_train, y_train)
     y_pred = classifier.predict(X_test)
     result = confusion_matrix(y_test, y_pred)
@@ -46,7 +47,7 @@ def main():
     no_maximumDepth(rseed, x, y)
     maximunDepth(rseed, max_depth, x, y)
     path = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
-    result, result1, result2 =  with_dataset(path)
+    result, result1, result2 =  with_dataset(path, rseed)
     print("Confusion Matrix:")
     print(result)
     print("Classification Report:",)
