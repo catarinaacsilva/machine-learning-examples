@@ -1,6 +1,6 @@
 # Random Forest
 #   c.alexandracorreia@ua.pt
-#   c.alexandracorreua@av.it.pt
+#   c.alexandracorreia@av.it.pt
 
 import numpy as np
 import pandas as pd
@@ -10,11 +10,13 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 
 
+# Just a simple decicion tree
 def single_decision_tree(rseed, x, y):
     tree = DecisionTreeClassifier(random_state=rseed)
     tree.fit(x,y)
     return tree
 
+# Give a maximum depth to all trees
 def limit_max_depth(rseed, max_depth, x, y):
     tree = DecisionTreeClassifier(max_depth = 2, random_state=rseed)
     tree.fit(x,y)
