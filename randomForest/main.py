@@ -25,11 +25,16 @@ def readDataset(path: str, rseed: int):
     print("Accuracy:",result2)
 
 
-# Returns collumns from csv file
-def getCollumnsFromCsv(path: str, numberOfLines: int):
+# Returns collumns from csv file and identify missing data/anomalies
+def infoDataAndCollumns(path: str, numberOfLines: int):
     features = pd.read_csv(path)
-    return features.head(numberOfLines)
+    collumns = features.head(numberOfLines)
+    shape = features.shape
+    # Descriptive statistics for each column
+    describe = features.describe()
+    return collumns, shape, describe
     
+
 
 def main():
     #set random seed to ensure reproductible runs
@@ -45,9 +50,18 @@ def main():
     path = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
     readDataset(path, rseed)
 
-    collumnsInformation = getCollumnsFromCsv(path, 5)
+    numberOfLines = 5
+    print("Information about collumns with %d" %(numberOfLines) + " lines")
+    collumnsInformation, shape, describe = infoDataAndCollumns(path, numberOfLines)
     print(collumnsInformation)
 
-    
+    print("Identify Anomalies/ Missing Data:")
+    print(shape)
+
+    print("Descriptive statistics for each column")
+    print(describe)
+
+
+
 
 main()
