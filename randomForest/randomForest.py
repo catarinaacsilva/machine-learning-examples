@@ -22,7 +22,7 @@ def limit_max_depth(rseed, max_depth, x, y):
     tree.fit(x,y)
     return tree
 
-#TODO: verificar se rseed = n_estimators
+#TODO:verify if rseed = n_estimators
 def with_dataset(path, rseed):
     #Assign column names to the dataset
     headernames = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'Class']
