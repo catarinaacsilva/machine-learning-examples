@@ -6,7 +6,7 @@
 ## Requirements
 
 - python 3
-- Install requirements on requirements.txt file
+- Install requirements using requirements.txt file
 
 ## Run
 
